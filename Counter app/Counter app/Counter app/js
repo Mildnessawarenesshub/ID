@@ -1,0 +1,33 @@
+// Set initial count
+let count = 0;
+
+// Select value text and buttons
+const value = document.querySelector("#value");
+const btns = document.querySelectorAll(".btn");
+
+btns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+        const styles = e.currentTarget.classList;
+        
+        // Change count based on button clicked
+        if (styles.contains("decrease")) {
+            count--;
+        } else if (styles.contains("increase")) {
+            count++;
+        } else {
+            count = 0;
+        }
+
+        // Change value text color based on positive/negative numbers
+        if (count > 0) {
+            value.style.color = "#2ecc71"; // Green
+        } else if (count < 0) {
+            value.style.color = "#e74c3c"; // Red
+        } else {
+            value.style.color = "#333"; // Default dark grey
+        }
+
+        value.textContent = count;
+    });
+});
+      
