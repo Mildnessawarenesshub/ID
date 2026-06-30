@@ -10,7 +10,7 @@
 
     <div class="counter-container">
         <h2>3MTT Counter App</h2>
-        <div id="counter-value">0</div>
+        <div id="counter-value">3</div>
         
         <div class="button-group">
             <button id="decrease-btn">Decrease</button>
@@ -18,144 +18,8 @@
             <button id="increase-btn">Increase</button>
         </div>
         
-        <a href="../" class="back-home">← Back to Portfolio</a>
+        <a href="../counter-app/index.html" class="back-home"> Back to Portfolio</a>
     </div>
 
-    <script src="app.js"></script>
 </body>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-body {
-    background-color: #0f172a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-}
-
-.counter-container {
-    background-color: #1e293b;
-    padding: 40px 30px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-    border: 1px solid #334155;
-}
-
-h2 {
-    color: #94a3b8;
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-#counter-value {
-    font-size: 5rem;
-    font-weight: bold;
-    color: #ffffff;
-    margin: 20px 0;
-    transition: color 0.3s ease;
-}
-
-.button-group {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 25px;
-}
-
-button {
-    flex: 1;
-    padding: 12px 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-}
-
-#decrease-btn {
-    background-color: #ef4444;
-    color: white;
-}
-
-#decrease-btn:hover { background-color: #dc2626; }
-
-#reset-btn {
-    background-color: #64748b;
-    color: white;
-}
-
-#reset-btn:hover { background-color: #475569; }
-
-#increase-btn {
-    background-color: #10b981;
-    color: white;
-}
-
-#increase-btn:hover { background-color: #059669; }
-
-button:active {
-    transform: scale(0.95);
-}
-
-.back-home {
-    display: inline-block;
-    color: #38bdf8;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.2s;
-}
-
-.back-home:hover {
-    color: #7dd3fc;
-}
-  // Grab elements from the page
-const counterValue = document.getElementById('counter-value');
-const decreaseBtn = document.getElementById('decrease-btn');
-const resetBtn = document.getElementById('reset-btn');
-const increaseBtn = document.getElementById('increase-btn');
-
-// Start tracking the count state
-let count = 0;
-
-// Update color based on positive or negative values
-function updateColor() {
-    if (count > 0) {
-        counterValue.style.color = '#10b981'; // Green for positive
-    } else if (count < 0) {
-        counterValue.style.color = '#ef4444'; // Red for negative
-    } else {
-        counterValue.style.color = '#ffffff'; // White for zero
-    }
-}
-
-// Button Click Event Listeners
-increaseBtn.addEventListener('click', () => {
-    count++;
-    counterValue.textContent = count;
-    updateColor();
-});
-
-decreaseBtn.addEventListener('click', () => {
-    count--;
-    counterValue.textContent = count;
-    updateColor();
-});
-
-resetBtn.addEventListener('click', () => {
-    count = 0;
-    counterValue.textContent = count;
-    updateColor();
-});
-  
+</html>
